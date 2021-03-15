@@ -84,3 +84,8 @@ function displayOffer() {
     $_GET['action'] = "displayOffer";
     require "view/offers.php";
 }
+
+function displayContact() {
+    $_GET['action'] = "contact";
+    require "view/contact.php";
+}
