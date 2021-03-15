@@ -1,0 +1,32 @@
+.text-align-right-navbar {
+    position: absolute;
+    right: 50px;
+}
+
+.text-align-center {
+    max-width: 64em;
+    margin: auto;
+    text-align: center;
+}
+
+.text-align-right {
+    max-width: 46.6em;
+    margin-left: auto;
+    margin-right: 24px;
+}
+
+.text-align-left {
+    max-width: 64em;
+    margin-left: auto;
+    margin-right: 120px;
+}
+
+#offresMenu {
+    max-width: 100em;
+    margin: auto;
+    text-align: center;
+}
+
+.offresMenu {
+    max-height: 50em;
+}
