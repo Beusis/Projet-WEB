@@ -30,3 +30,12 @@
 .offresMenu {
     max-height: 50em;
 }
+
+.offersImg {
+    max-height: 30em;
+    width: 1024px;
+}
+
+#offerText {
+    font-size: 1.5em;
+}

@@ -79,3 +79,8 @@ function userMenu() {
     $_GET['action'] = "userMenu";
     require "view/user_menu.php";
 }
+
+function displayOffer() {
+    $_GET['action'] = "displayOffer";
+    require "view/offers.php";
+}
