@@ -27,6 +27,9 @@ if (isset($_GET['action'])) {
         case 'contact' :
             displayContact();
             break;
+        case 'createOffer' :
+            createOffer();
+            break;
         default :
             home();
     }
