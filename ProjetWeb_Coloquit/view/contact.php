@@ -14,31 +14,31 @@ ob_start();
                 <div class="mb-3 row">
                     <label for="inputUserFirstname" class="col-sm-2 col-form-label">Name :</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="inputUserFirstname" placeholder="Firstname">
+                        <input type="text" class="form-control" name="inputUserFirstname" placeholder="Name" required>
                     </div>
                 </div>
                 <br><br><br>
                 <div class="mb-3 row">
                     <label for="inputUserLastname" class="col-sm-2 col-form-label">Email :</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="inputUserLastname"
-                               placeholder="Lastname">
+                        <input type="email" class="form-control" name="inputUserLastname"
+                               placeholder="Email address" required>
                     </div>
                 </div>
                 <br><br><br>
                 <div class="mb-3 row">
                     <label for="inputUserEmailAddress" class="col-sm-2 col-form-label">Subject :</label>
                     <div class="col-sm-10">
-                        <input type="email" class="form-control" name="inputUserEmailAddress"
-                               placeholder="Email address">
+                        <input type="text" class="form-control" name="inputUserEmailAddress"
+                               placeholder="Subject of the message">
                     </div>
                 </div>
                 <br><br><br>
                 <div class="mb-3 row">
                     <label for="inputUserPsw" class="col-sm-2 col-form-label">Message :</label>
                     <div class="col-sm-10">
-                        <input type="password" class="form-control" name="inputUserPsw"
-                               placeholder="Password">
+                        <input type="text" class="form-control" name="inputUserPsw"
+                               placeholder="Message" required>
                     </div>
                 </div>
                 </div>
