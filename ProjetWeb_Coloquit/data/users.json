@@ -1,14 +1,1 @@
-[
-  {
-    "userEmailAddress": "test@cpnv.ch",
-    "userHashPsw": "$2y$10$yTEVInFeyluqeD\/sJE3NUutK4bEla0rVHn67sc8dg\/bRt2ceLZFhy"
-  },
-  {
-    "userEmailAddress": "axel.pittet@cpnv.ch",
-    "userHashPsw": "$2y$10$ciH7Yo.bhDOwW3duaPwHBeN9IEWL2.ZwUYzAnWqySR58thqtN\/V\/e"
-  },
-  {
-    "userEmailAddress": "a@a.a",
-    "userHashPsw": "$2y$10$Ju\/Cyt3hNGcRG5eLGzy1HOEPTX28xe4vme8MNm1YSidoQbEO5MEAS"
-  }
-]
+[{"userEmailAddress":"test@cpnv.ch","userHashPsw":"$2y$10$yTEVInFeyluqeD\/sJE3NUutK4bEla0rVHn67sc8dg\/bRt2ceLZFhy"},{"userEmailAddress":"axel.pittet@cpnv.ch","userHashPsw":"$2y$10$ciH7Yo.bhDOwW3duaPwHBeN9IEWL2.ZwUYzAnWqySR58thqtN\/V\/e"},{"userEmailAddress":"a@a.a","userHashPsw":"$2y$10$Ju\/Cyt3hNGcRG5eLGzy1HOEPTX28xe4vme8MNm1YSidoQbEO5MEAS"},{"userEmailAddress":"fasdfa@sdfg.h","userHashPsw":"$2y$10$OAwNFMV7.1QEsHHk6LdZUOEcBKleG.H0e39zmIG04i4BNQe6c89fS"}]
