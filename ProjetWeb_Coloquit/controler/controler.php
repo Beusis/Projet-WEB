@@ -94,3 +94,4 @@ function createOffer(){
     $_GET['action'] = "createOffer";
     require "view/create_offer.php";
 }
+
