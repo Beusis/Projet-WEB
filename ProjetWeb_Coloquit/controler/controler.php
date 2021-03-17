@@ -95,3 +95,4 @@ function createOffer(){
     require "view/create_offer.php";
 }
 
+//Salutation
