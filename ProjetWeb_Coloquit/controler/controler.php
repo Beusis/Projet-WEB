@@ -91,6 +91,14 @@ function displayContact() {
 }
 
 function createOffer(){
-    $_GET['action'] = "createOffer";
-    require "view/create_offer.php";
+    if (!isset($_POST['createOfferAddress'])) {
+        $_GET['action'] = "createOffer";
+        require "view/create_offer.php";
+    } else {
+        $_GET['action'] = "home";
+        require "view/home.php";
+        echo "<div class='alert alert-primary position-absolute top-0 mt-13-5' role='alert'>
+            Votre offre a été créee ! (En vrai non parce que c'et pas encore implémenté)
+        </div>";
+    }
 }
