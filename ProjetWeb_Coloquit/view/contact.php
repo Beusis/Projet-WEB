@@ -1,4 +1,3 @@
-
 <?php
 
 $title = 'Contact';
@@ -9,7 +8,7 @@ ob_start();
         <br>
         <h2>Contact</h2>
         <br><br><br><br>
-        <div class="text-align-left">
+        <div class="text-align-center">
             <form class="row g-3" method="post" action="index.php?action=register">
                 <div class="mb-3 row">
                     <label for="inputUserFirstname" class="col-sm-2 col-form-label">Name :</label>
@@ -41,17 +40,14 @@ ob_start();
                                placeholder="Message" required>
                     </div>
                 </div>
-                </div>
-                <br><br><br><br><br><br>
+                <br><br><br>
                 <div class="mb-3 row col-sm-10 text-align-right">
                     <input type="submit" value="Contact">
                 </div>
             </form>
-    </div>
-
-
-
+        </div>
 <?php
 $content = ob_get_clean();
 require 'gabarit.php';
 ?>
+
