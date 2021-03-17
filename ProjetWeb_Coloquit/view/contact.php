@@ -41,8 +41,8 @@ ob_start();
                     </div>
                 </div>
                 <br><br><br>
-                <div class="mb-3 row col-sm-10 text-align-right">
-                    <input type="submit" value="Contact">
+                <div class="mb-3 row col-sm-10 text-align-center">
+                    <input id="inputContact" type="submit" value="Contact">
                 </div>
             </form>
         </div>
