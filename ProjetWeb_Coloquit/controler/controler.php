@@ -97,7 +97,7 @@ function createOffer(){
     } else {
         $_GET['action'] = "home";
         require "view/home.php";
-        echo "<div class='alert alert-primary position-absolute top-0 mt-13-5' role='alert'>
+        echo "<div class='alert alert-primary position-absolute top-0 start-50 translate-middle mt-5' role='alert'>
             Votre offre a été créee ! (En vrai non parce que c'et pas encore implémenté)
         </div>";
     }
