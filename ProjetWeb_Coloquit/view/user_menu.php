@@ -8,7 +8,7 @@ ob_start();
         <a href="index.php?action=createOffer" class="text-align-left">
             <button class="btn btn-secondary">Create offer</button>
        </a>
-        <a href="index.php?action=modifyAnnonce" class="text-align-right">
+        <a href="index.php?action=modifyOffer" class="text-align-right">
             <button class="btn btn-secondary">Modify offer</button>
         </a>
      </span>

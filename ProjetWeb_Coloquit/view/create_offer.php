@@ -19,6 +19,14 @@ ob_start();
                 </div>
                 <br><br><br>
                 <div class="mb-3 row">
+                    <label for="createOfferTitle" class="col-sm-2 col-form-label">Title :</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="createOfferTitle"
+                               placeholder="Title of the colocation offer" required>
+                    </div>
+                </div>
+                <br><br><br>
+                <div class="mb-3 row">
                     <label for="createOfferDescription" class="col-sm-2 col-form-label">Description :</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" name="createOfferDescription"

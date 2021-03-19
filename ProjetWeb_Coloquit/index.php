@@ -30,6 +30,9 @@ if (isset($_GET['action'])) {
         case 'createOffer' :
             createOffer();
             break;
+        case 'modifyOffer' :
+            modifyOffer();
+            break;
         default :
             home();
     }
