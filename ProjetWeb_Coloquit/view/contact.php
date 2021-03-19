@@ -9,7 +9,7 @@ ob_start();
         <h2>Contact</h2>
         <br><br><br><br>
         <div class="text-align-center">
-            <form class="row g-3" method="post" action="index.php?action=register">
+            <form class="row g-3" method="post" action="index.php?action=home">
                 <div class="mb-3 row">
                     <label for="inputUserFirstname" class="col-sm-2 col-form-label">Name :</label>
                     <div class="col-sm-10">
