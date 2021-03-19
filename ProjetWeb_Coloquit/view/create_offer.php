@@ -9,7 +9,7 @@ ob_start();
         <h2>Create an offer</h2>
         <br><br><br><br>
         <div class="text-align-left">
-            <form class="row g-3" method="post" action="index.php?action=createOffer">
+            <form class="row g-3" method="post" action="index.php?action=createOffer" enctype="multipart/form-data">
                 <div class="mb-3 row">
                     <label for="createOfferAddress" class="col-sm-2 col-form-label">Address :</label>
                     <div class="col-sm-10">

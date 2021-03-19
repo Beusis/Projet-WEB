@@ -1,11 +1,15 @@
 <?php
 
-function home() {
+function home()
+{
+    require_once "model/offersManager.php";
+    $offers = getOffers();
     $_GET['action'] = "home";
     require "view/home.php";
 }
 
-function register($registerRequest) {
+function register($registerRequest)
+{
     if (isset($registerRequest['inputUserEmailAddress']) && isset($registerRequest['inputUserPsw']) && isset($registerRequest['inputUserPswConfirm'])) {
 
         //extract register parameters
@@ -18,8 +22,7 @@ function register($registerRequest) {
             if (registerNewAccount($userEmailAddress, $userPsw) == true) {
                 createSession($userEmailAddress);
                 $registerErrorMessage = null;
-                $_GET['action'] = "home";
-                require "view/home.php";
+                home();
             } else {
                 $registerErrorMessage = "L'inscription n'est pas possible avec les valeurs saisies !";
                 $_GET['action'] = "register";
@@ -54,8 +57,7 @@ function login($loginRequest)
         if (isLoginCorrect($userEmailAddress, $userPsw)) {
             $loginErrorMessage = null;
             createSession($userEmailAddress);
-            $_GET['action'] = "home";
-            require "view/home.php";
+            home();
         } else { //if the user/psw does not match, login form appears again
             $loginErrorMessage = "L'adresse email et/ou le mot de passe ne correspondent pas !";
             $_GET['action'] = "login";
@@ -71,48 +73,55 @@ function logout()
 {
     $_SESSION = array();
     session_destroy();
-    $_GET['action'] = "home";
-    require "view/home.php";
+    home();
 }
 
-function userMenu() {
+function userMenu()
+{
     $_GET['action'] = "userMenu";
     require "view/user_menu.php";
 }
 
-function displayOffer() {
+function displayOffer()
+{
     $_GET['action'] = "displayOffer";
     require "view/offers.php";
 }
 
-function displayContact() {
+function displayContact()
+{
     $_GET['action'] = "contact";
     require "view/contact.php";
 }
 
-function createOffer($offerRequest){
+function createOffer($offerRequest)
+{
     if (!isset($offerRequest['createOfferAddress'])) {
         $_GET['action'] = "createOffer";
         require "view/create_offer.php";
     } else {
         require_once "model/offersManager.php";
+        $file_name = $_FILES['createOfferImage']['name'];
+        $file_tmp = $_FILES['createOfferImage']['tmp_name'];
+        $extension = pathinfo($_FILES["createOfferImage"]["name"], PATHINFO_EXTENSION);
+        if ($extension == 'jpg' || $extension == 'jpeg' || $extension == 'png' || $extension == 'gif' | $extension == 'JPG' || $extension == 'JPEG' || $extension == 'PNG' || $extension == 'GIF') {
+            move_uploaded_file($file_tmp, "view/content/img/" . $file_name);
+        }
         $result = createOfferJSON($offerRequest);
-
-        $_GET['action'] = "home";
-        require "view/home.php";
+        home();
         echo "<div class='alert alert-primary position-absolute top-0 start-50 translate-middle mt-5' role='alert'>
-            Votre offre a été créee ! (En vrai non parce que c'et pas encore implémenté)
+            Votre offre a été créée !
         </div>";
     }
 }
 
-function modifyOffer(){
+function modifyOffer()
+{
     if (!isset($_POST['modifyOfferAddress'])) {
         $_GET['action'] = "modifyOffer";
         require "view/modify_offer.php";
     } else {
-        $_GET['action'] = "home";
-        require "view/home.php";
+        home();
         echo "<div class='alert alert-primary position-absolute top-0 start-50 translate-middle mt-5' role='alert'>
             Votre offre a été modifiée ! (En vrai non parce que c'et pas encore implémenté)
         </div>";

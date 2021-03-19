@@ -21,11 +21,12 @@ function createOfferJSON($offerRequest)
 
     $result = false;
     $offers = getOffers();
+    $offerImg = $_FILES['createOfferImage'];
 
     //Ajouter la ligne de l'email(on pourrait vérifier s'il existe)
     $offers[] = array('userEmailAddress' => $_SESSION['userEmailAddress'], "colocationAddress" => $offerRequest['createOfferAddress'],
         "colocationTitle" => $offerRequest['createOfferTitle'], "colocationDescription" => $offerRequest['createOfferDescription'],
-        "colocationDate" => $offerRequest['createOfferDate']);
+        "colocationDate" => $offerRequest['createOfferDate'], "colocationImg" => $offerImg['name']);
 
     //réécrire le fichier des offers
     updateOffers($offers);
