@@ -90,11 +90,14 @@ function displayContact() {
     require "view/contact.php";
 }
 
-function createOffer(){
-    if (!isset($_POST['createOfferAddress'])) {
+function createOffer($offerRequest){
+    if (!isset($offerRequest['createOfferAddress'])) {
         $_GET['action'] = "createOffer";
         require "view/create_offer.php";
     } else {
+        require_once "model/offersManager.php";
+        $result = createOfferJSON($offerRequest);
+
         $_GET['action'] = "home";
         require "view/home.php";
         echo "<div class='alert alert-primary position-absolute top-0 start-50 translate-middle mt-5' role='alert'>

@@ -28,7 +28,7 @@ if (isset($_GET['action'])) {
             displayContact();
             break;
         case 'createOffer' :
-            createOffer();
+            createOffer($_POST);
             break;
         case 'modifyOffer' :
             modifyOffer();
