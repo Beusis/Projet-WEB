@@ -1,0 +1,26 @@
+[
+  {
+    "userEmailAddress": "axel.pittet@cpnv.ch",
+    "colocationAddress": "Montchernd",
+    "colocationTitle": "wesh",
+    "colocationDescription": "c'est pas mal",
+    "colocationDate": "2021-03-17",
+    "colocationImg": "Netflix.jpg"
+  },
+  {
+    "userEmailAddress": "axel.pittet@cpnv.ch",
+    "colocationAddress": "a",
+    "colocationTitle": "wesh",
+    "colocationDescription": "ca va",
+    "colocationDate": "2021-03-20",
+    "colocationImg": "bfa.png"
+  },
+  {
+    "userEmailAddress": "axel.pittet@cpnv.ch",
+    "colocationAddress": "a",
+    "colocationTitle": "a",
+    "colocationDescription": "a",
+    "colocationDate": "2021-03-21",
+    "colocationImg": "benjamin_muminovic.jpg"
+  }
+]
