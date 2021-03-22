@@ -31,7 +31,7 @@ if (isset($_GET['action'])) {
             createOffer($_POST);
             break;
         case 'modifyOffer' :
-            modifyOffer();
+            modifyOffer($_POST);
             break;
         default :
             home();

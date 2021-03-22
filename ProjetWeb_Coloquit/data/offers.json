@@ -1,10 +1,20 @@
 [
   {
+    "colocationID": 0,
     "userEmailAddress": "axel.pittet@cpnv.ch",
-    "colocationAddress": "Montchernd",
-    "colocationTitle": "wesh",
-    "colocationDescription": "c'est pas mal",
-    "colocationDate": "2021-03-17",
+    "colocationAddress": "a",
+    "colocationTitle": "testID",
+    "colocationDescription": "a",
+    "colocationDate": "2021-03-11",
+    "colocationImg": "Netflix.jpg"
+  },
+  {
+    "colocationID": 1,
+    "userEmailAddress": "axel.pittet@cpnv.ch",
+    "colocationAddress": "a",
+    "colocationTitle": "testID2",
+    "colocationDescription": "a",
+    "colocationDate": "2021-03-26",
     "colocationImg": "Netflix.jpg"
   }
 ]

@@ -23,12 +23,33 @@ function createOfferJSON($offerRequest)
     $offers = getOffers();
     $offerImg = $_FILES['createOfferImage'];
 
-    //Ajouter la ligne de l'email(on pourrait vérifier s'il existe)
-    $offers[] = array('userEmailAddress' => $_SESSION['userEmailAddress'], "colocationAddress" => $offerRequest['createOfferAddress'],
+    $offerID = 0;
+    foreach ($offers as $offer) {
+        $offerID += 1;
+    }
+
+    $offers[] = array('colocationID' => $offerID, 'userEmailAddress' => $_SESSION['userEmailAddress'], "colocationAddress" => $offerRequest['createOfferAddress'],
         "colocationTitle" => $offerRequest['createOfferTitle'], "colocationDescription" => $offerRequest['createOfferDescription'],
         "colocationDate" => $offerRequest['createOfferDate'], "colocationImg" => $offerImg['name']);
 
     //réécrire le fichier des offers
+    updateOffers($offers);
+    return true;
+}
+
+function modifyOfferJSON($offerModifyRequest) {
+    $result = false;
+    $offers = getOffers();
+    $offerImg = $_FILES['modifyOfferImage'];
+
+    foreach ($offers as $offer) {
+        if ($offer['colocationID'] == $offerModifyRequest['modifyOfferID']) {
+            $offers[] = array('colocationID' => $offerModifyRequest['modifyOfferID'], 'userEmailAddress' => $_SESSION['userEmailAddress'], "colocationAddress" => $offerModifyRequest['modifyOfferAddress'],
+                "colocationTitle" => $offerModifyRequest['modifyOfferTitle'], "colocationDescription" => $offerModifyRequest['modifyOfferDescription'],
+                "colocationDate" => $offerModifyRequest['modifyOfferDate'], "colocationImg" => $offerImg['name']);
+        }
+    }
+
     updateOffers($offers);
     return true;
 }

@@ -100,13 +100,8 @@ function createOffer($offerRequest)
         $_GET['action'] = "createOffer";
         require "view/create_offer.php";
     } else {
+        fileUpload('createOfferImage');
         require_once "model/offersManager.php";
-        $file_name = $_FILES['createOfferImage']['name'];
-        $file_tmp = $_FILES['createOfferImage']['tmp_name'];
-        $extension = pathinfo($_FILES["createOfferImage"]["name"], PATHINFO_EXTENSION);
-        if ($extension == 'jpg' || $extension == 'jpeg' || $extension == 'png' || $extension == 'gif' | $extension == 'JPG' || $extension == 'JPEG' || $extension == 'PNG' || $extension == 'GIF') {
-            move_uploaded_file($file_tmp, "view/content/img/" . $file_name);
-        }
         $result = createOfferJSON($offerRequest);
         home();
         echo "<div class='alert alert-primary position-absolute top-0 start-50 translate-middle mt-5' role='alert'>
@@ -115,15 +110,32 @@ function createOffer($offerRequest)
     }
 }
 
-function modifyOffer()
+function modifyOffer($offerModifyRequest)
 {
-    if (!isset($_POST['modifyOfferAddress'])) {
-        $_GET['action'] = "modifyOffer";
+    if (!isset($_GET['modifyOfferID'])) {
+        require_once "model/offersManager.php";
+        $offers = getOffers();
+        require "view/modifyOffer_menu.php";
+    } else if (!isset($_POST['modifyOfferAddress'])) {
+        require_once "model/offersManager.php";
+        $offers = getOffers();
         require "view/modify_offer.php";
     } else {
+        fileUpload('modifyOfferImage');
+        require_once "model/offersManager.php";
+        $result = modifyOfferJSON($offerModifyRequest);
         home();
-        echo "<div class='alert alert-primary position-absolute top-0 start-50 translate-middle mt-5' role='alert'>
-            Votre offre a été modifiée ! (En vrai non parce que c'et pas encore implémenté)
-        </div>";
+        //echo "<div class='alert alert-primary position-absolute top-0 start-50 translate-middle mt-5' role='alert'>
+        //    Votre offre a été modifiée ! (En vrai non parce que c'et pas encore implémenté)
+        //</div>";
+    }
+}
+
+function fileUpload($formImage){
+    $file_name = $_FILES[$formImage]['name'];
+    $file_tmp = $_FILES[$formImage]['tmp_name'];
+    $extension = pathinfo($_FILES[$formImage]["name"], PATHINFO_EXTENSION);
+    if ($extension == 'jpg' || $extension == 'jpeg' || $extension == 'png' || $extension == 'gif' | $extension == 'JPG' || $extension == 'JPEG' || $extension == 'PNG' || $extension == 'GIF') {
+        move_uploaded_file($file_tmp, "view/content/img/" . $file_name);
     }
 }
