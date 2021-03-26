@@ -41,15 +41,20 @@ function modifyOfferJSON($offerModifyRequest) {
     $result = false;
     $offers = getOffers();
     $offerImg = $_FILES['modifyOfferImage'];
-
     foreach ($offers as $offer) {
-        if ($offer['colocationID'] == $offerModifyRequest['modifyOfferID']) {
-            $offers[] = array('colocationID' => $offerModifyRequest['modifyOfferID'], 'userEmailAddress' => $_SESSION['userEmailAddress'], "colocationAddress" => $offerModifyRequest['modifyOfferAddress'],
+        if ($offer['colocationID'] == $_GET['modifyOfferID']) {
+            $offerss[] = array('colocationID' => $_GET['modifyOfferID'], 'userEmailAddress' => $_SESSION['userEmailAddress'], "colocationAddress" => $offerModifyRequest['modifyOfferAddress'],
                 "colocationTitle" => $offerModifyRequest['modifyOfferTitle'], "colocationDescription" => $offerModifyRequest['modifyOfferDescription'],
                 "colocationDate" => $offerModifyRequest['modifyOfferDate'], "colocationImg" => $offerImg['name']);
         }
     }
+    foreach ($offers as $offer => $value) {
+        if (in_array($_GET['modifyOfferID'], $value)) {
+            unset($offers[$offer]);
+        }
+    }
+    updateOffers($offerss);
 
-    updateOffers($offers);
+
     return true;
 }

@@ -11,7 +11,7 @@ ob_start();
         <div class="text-align-left">
             <?php foreach ($offers as $offer) :
                 if ($offer['colocationID'] == $_GET['modifyOfferID']) :?>
-                    <form class="row g-3" method="post" action="index.php?action=modifyOffer"
+                    <form class="row g-3" method="post" action="index.php?action=modifyOffer&modifyOfferID=<?=$offer['colocationID']?>"
                           enctype="multipart/form-data">
                         <div class="mb-3 row">
                             <label for="modifyOfferTitle" class="col-sm-2 col-form-label">Title :</label>
