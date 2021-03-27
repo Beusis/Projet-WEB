@@ -6,10 +6,10 @@ ob_start();
     <div class="text-align-center">
         <?php
         foreach ($offers as $offer) :
-            if ($offer['colocationID'] = $_GET['offerID']) :
+            if ($offer['colocationID'] == $_GET['offerID']) :
                 ?>
                 <br>
-                <h4>Ceci est une offre de colocation</h4>
+                <h4><?= $offer['colocationTitle'] ?></h4>
 
                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
@@ -24,13 +24,13 @@ ob_start();
 
                     <div class="carousel-inner border-2 mt-3 offersImg">
                         <div class="carousel-item active">
-                            <img src="view/content/img/<?= $offer['colocationImage'] ?>" class="d-block w-100 h-100">
+                            <img src="view/content/img/<?= $offer['colocationImg'] ?>" class="d-block w-100 h-100">
                         </div>
                         <div class="carousel-item">
-                            <img src="view/content/img/<?= $offer['colocationImage2'] ?>" class="d-block w-100">
+                            <img src="view/content/img/<?= $offer['colocationImg2'] ?>" class="d-block w-100">
                         </div>
                         <div class="carousel-item">
-                            <img src="view/content/img/<?= $offer['colocationImage3'] ?>" class="d-block w-100">
+                            <img src="view/content/img/<?= $offer['colocationImg3'] ?>" class="d-block w-100">
                         </div>
                     </div>
                     <button class="carousel-control-prev btn-dark" type="button"
@@ -49,9 +49,7 @@ ob_start();
 
 
                 <div class="mt-5">
-                    <p id="offerText">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Fusce ac ipsum sit amet mauris finibus molestie.
-                        Aliquam metus est, feugiat id fringilla eget, consectetur a est.</p>
+                    <p id="offerText"><?= $offer['colocationDescription'] ?></p>
                 </div>
 
             <?php

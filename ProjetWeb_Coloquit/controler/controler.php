@@ -84,6 +84,7 @@ function userMenu()
 
 function displayOffer()
 {
+    require_once "model/offersManager.php";
     $offers = getOffers();
     $_GET['action'] = "displayOffer";
     require "view/offers.php";
