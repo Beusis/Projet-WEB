@@ -84,6 +84,7 @@ function userMenu()
 
 function displayOffer()
 {
+    $offers = getOffers();
     $_GET['action'] = "displayOffer";
     require "view/offers.php";
 }
@@ -101,6 +102,8 @@ function createOffer($offerRequest)
         require "view/create_offer.php";
     } else {
         fileUpload('createOfferImage');
+        fileUpload('createOfferImage2');
+        fileUpload('createOfferImage3');
         require_once "model/offersManager.php";
         $result = createOfferJSON($offerRequest);
         home();
@@ -125,13 +128,14 @@ function modifyOffer($offerModifyRequest)
         require_once "model/offersManager.php";
         $result = modifyOfferJSON($offerModifyRequest);
         home();
-        //echo "<div class='alert alert-primary position-absolute top-0 start-50 translate-middle mt-5' role='alert'>
-        //    Votre offre a été modifiée ! (En vrai non parce que c'et pas encore implémenté)
-        //</div>";
+        echo "<div class='alert alert-primary position-absolute top-0 start-50 translate-middle mt-5' role='alert'>
+            Votre offre a été modifiée !
+        </div>";
     }
 }
 
-function fileUpload($formImage){
+function fileUpload($formImage)
+{
     $file_name = $_FILES[$formImage]['name'];
     $file_tmp = $_FILES[$formImage]['tmp_name'];
     $extension = pathinfo($_FILES[$formImage]["name"], PATHINFO_EXTENSION);

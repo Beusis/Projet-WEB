@@ -11,18 +11,18 @@ ob_start();
         <div class="text-align-left">
             <form class="row g-3" method="post" action="index.php?action=createOffer" enctype="multipart/form-data">
                 <div class="mb-3 row">
-                    <label for="createOfferAddress" class="col-sm-2 col-form-label">Address :</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" name="createOfferAddress"
-                               placeholder="Address of the colocation offer" required>
-                    </div>
-                </div>
-                <br><br><br>
-                <div class="mb-3 row">
                     <label for="createOfferTitle" class="col-sm-2 col-form-label">Title :</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" name="createOfferTitle"
                                placeholder="Title of the colocation offer" required>
+                    </div>
+                </div>
+                <br><br><br>
+                <div class="mb-3 row">
+                    <label for="createOfferAddress" class="col-sm-2 col-form-label">Address :</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="createOfferAddress"
+                               placeholder="Address of the colocation offer" required>
                     </div>
                 </div>
                 <br><br><br>
@@ -47,14 +47,15 @@ ob_start();
                     <label for="createOfferImage" class="col-sm-2 col-form-label">Image(s) :</label>
                     <div class="col-sm-10">
                         <input type="file" class="form-control" name="createOfferImage" accept="image/*" required>
-                    </div>
+                    </div><br>
                     <label for="createOfferImage2" class="col-sm-2 col-form-label"></label>
                     <div class="col-sm-10">
                         <input type="file" class="form-control" name="createOfferImage2" accept="image/*">
-                    </div>
+                    </div><br>
                     <label for="createOfferImage3" class="col-sm-2 col-form-label"></label>
                     <div class="col-sm-10">
                         <input type="file" class="form-control" name="createOfferImage3" accept="image/*">
+                        <span>Only the first one is required</span>
                     </div>
                 </div>
                 <br><br><br><br>
