@@ -44,11 +44,14 @@ function modifyOfferJSON($offerModifyRequest) {
     $result = false;
     $offers = getOffers();
     $offerImg = $_FILES['modifyOfferImage'];
+    $offerImg2 = $_FILES['modifyOfferImage2'];
+    $offerImg3 = $_FILES['modifyOfferImage3'];
+
     foreach ($offers as $offer) {
         if ($offer['colocationID'] == $_GET['modifyOfferID']) {
             $offerss[] = array('colocationID' => $_GET['modifyOfferID'], 'userEmailAddress' => $_SESSION['userEmailAddress'], "colocationAddress" => $offerModifyRequest['modifyOfferAddress'],
                 "colocationTitle" => $offerModifyRequest['modifyOfferTitle'], "colocationDescription" => $offerModifyRequest['modifyOfferDescription'],
-                "colocationDate" => $offerModifyRequest['modifyOfferDate'], "colocationImg" => $offerImg['name']);
+                "colocationDate" => $offerModifyRequest['modifyOfferDate'], "colocationImg" => $offerImg['name'], "colocationImg2" => $offerImg2['name'], "colocationImg3" => $offerImg3['name']);
         }
     }
     foreach ($offers as $offer => $value) {

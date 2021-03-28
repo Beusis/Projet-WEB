@@ -126,6 +126,8 @@ function modifyOffer($offerModifyRequest)
         require "view/modify_offer.php";
     } else {
         fileUpload('modifyOfferImage');
+        fileUpload('modifyOfferImage2');
+        fileUpload('modifyOfferImage3');
         require_once "model/offersManager.php";
         $result = modifyOfferJSON($offerModifyRequest);
         home();
@@ -142,5 +144,14 @@ function fileUpload($formImage)
     $extension = pathinfo($_FILES[$formImage]["name"], PATHINFO_EXTENSION);
     if ($extension == 'jpg' || $extension == 'jpeg' || $extension == 'png' || $extension == 'gif' | $extension == 'JPG' || $extension == 'JPEG' || $extension == 'PNG' || $extension == 'GIF') {
         move_uploaded_file($file_tmp, "view/content/img/" . $file_name);
+    }
+}
+
+function deleteOffer(){
+    $offers = getOffers();
+    foreach ($offers as $offer) {
+        if ($offer['colocationID'] == $_GET['deleteOfferID']) {
+            unset($offers[$offer]);
+        }
     }
 }
