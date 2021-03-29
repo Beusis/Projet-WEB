@@ -40,27 +40,35 @@ function createOfferJSON($offerRequest)
     return true;
 }
 
-function modifyOfferJSON($offerModifyRequest) {
-    $result = false;
-    $offers = getOffers();
+function modifyOfferJSON($offerModifyRequest)
+{
     $offerImg = $_FILES['modifyOfferImage'];
     $offerImg2 = $_FILES['modifyOfferImage2'];
     $offerImg3 = $_FILES['modifyOfferImage3'];
 
-    foreach ($offers as $offer) {
-        if ($offer['colocationID'] == $_GET['modifyOfferID']) {
-            $offerss[] = array('colocationID' => $_GET['modifyOfferID'], 'userEmailAddress' => $_SESSION['userEmailAddress'], "colocationAddress" => $offerModifyRequest['modifyOfferAddress'],
-                "colocationTitle" => $offerModifyRequest['modifyOfferTitle'], "colocationDescription" => $offerModifyRequest['modifyOfferDescription'],
-                "colocationDate" => $offerModifyRequest['modifyOfferDate'], "colocationImg" => $offerImg['name'], "colocationImg2" => $offerImg2['name'], "colocationImg3" => $offerImg3['name']);
+    $data = file_get_contents("data/offers.json");
+    $data = json_decode($data, true);
+    $arr_index = array();
+
+    foreach ($data as $key => $value) {
+        if ($value['colocationID'] == $_GET['modifyOfferID']) {
+            $arr_index[] = $key;
         }
     }
-    foreach ($offers as $offer => $value) {
-        if (in_array($_GET['modifyOfferID'], $value)) {
-            unset($offers[$offer]);
-        }
+
+    foreach ($arr_index as $i) {
+        $data[$i]['colocationAddress'] = $offerModifyRequest['modifyOfferAddress'];
+        $data[$i]['colocationTitle'] = $offerModifyRequest['modifyOfferTitle'];
+        $data[$i]['colocationDescription'] = $offerModifyRequest['modifyOfferDescription'];
+        $data[$i]['colocationDate'] = $offerModifyRequest['modifyOfferDate'];
+        $data[$i]['colocationImg'] = $offerImg['name'];
+        $data[$i]['colocationImg2'] = $offerImg2['name'];
+        $data[$i]['colocationImg3'] = $offerImg3['name'];
     }
-    updateOffers($offerss);
 
+    $data = array_values($data);
 
-    return true;
+    $data = json_encode($data, JSON_PRETTY_PRINT);
+
+    file_put_contents("data/offers.json", $data);
 }

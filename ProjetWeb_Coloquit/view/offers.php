@@ -12,39 +12,49 @@ ob_start();
                 <h4><?= $offer['colocationTitle'] ?></h4>
 
                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                                class="active"
-                                aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                                aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                                aria-label="Slide 3"></button>
-                    </div>
+
+                    <?php if ((isset($offer['colocationImg2'])) && (isset($offer['colocationImg3']))) : ?>
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                    class="active"
+                                    aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                        </div>
+                    <?php endif; ?>
 
                     <div class="carousel-inner border-2 mt-3 offersImg">
                         <div class="carousel-item active">
                             <img src="view/content/img/<?= $offer['colocationImg'] ?>" class="d-block w-100 h-100">
                         </div>
-                        <div class="carousel-item">
-                            <img src="view/content/img/<?= $offer['colocationImg2'] ?>" class="d-block w-100">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="view/content/img/<?= $offer['colocationImg3'] ?>" class="d-block w-100">
-                        </div>
+                        <?php if ($offer['colocationImg2'] != "") : ?>
+                            <div class="carousel-item">
+                                <img src="view/content/img/<?= $offer['colocationImg2'] ?>" class="d-block w-100">
+                            </div>
+                        <?php endif;
+                        if ($offer['colocationImg3'] != "") : ?>
+                            <div class="carousel-item">
+                                <img src="view/content/img/<?= $offer['colocationImg3'] ?>" class="d-block w-100">
+                            </div>
+                        <?php endif; ?>
                     </div>
-                    <button class="carousel-control-prev btn-dark" type="button"
-                            data-bs-target="#carouselExampleIndicators"
-                            data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next btn-dark" type="button"
-                            data-bs-target="#carouselExampleIndicators"
-                            data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+                    <?php if ((isset($offer['colocationImg2'])) && (isset($offer['colocationImg3']))) : ?>
+                        <button class="carousel-control-prev btn-dark" type="button"
+                                data-bs-target="#carouselExampleIndicators"
+                                data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next btn-dark" type="button"
+                                data-bs-target="#carouselExampleIndicators"
+                                data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    <?php endif; ?>
+
                 </div>
 
 

@@ -129,7 +129,7 @@ function modifyOffer($offerModifyRequest)
         fileUpload('modifyOfferImage2');
         fileUpload('modifyOfferImage3');
         require_once "model/offersManager.php";
-        $result = modifyOfferJSON($offerModifyRequest);
+        modifyOfferJSON($offerModifyRequest);
         home();
         echo "<div class='alert alert-primary position-absolute top-0 start-50 translate-middle mt-5' role='alert'>
             Votre offre a été modifiée !
@@ -147,10 +147,11 @@ function fileUpload($formImage)
     }
 }
 
-function deleteOffer(){
+function deleteOffer()
+{
     $offers = getOffers();
-    foreach ($offers as $offer) {
-        if ($offer['colocationID'] == $_GET['deleteOfferID']) {
+    foreach ($offers as $offer => $value) {
+        if (in_array($_GET['deleteOfferID'], $value)) {
             unset($offers[$offer]);
         }
     }
