@@ -2,10 +2,12 @@
   {
     "colocationID": "0",
     "userEmailAddress": "axel.pittet@cpnv.ch",
-    "colocationAddress": "abcd",
-    "colocationTitle": "testID2",
-    "colocationDescription": "ca va",
-    "colocationDate": "2021-03-27",
-    "colocationImg": "Netflix.jpg"
+    "colocationAddress": "a",
+    "colocationTitle": "test delOffer2",
+    "colocationDescription": "b",
+    "colocationDate": "2021-04-04",
+    "colocationImg": "balsamiq.jpg",
+    "colocationImg2": "",
+    "colocationImg3": ""
   }
 ]

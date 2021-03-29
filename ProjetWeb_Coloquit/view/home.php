@@ -12,7 +12,7 @@ ob_start();
                     <div class="card-body">
                         <h5 class="card-title"><?=$offer['colocationTitle'] ?></h5>
                         <p class="card-text"><?=$offer['colocationDescription'] ?></p>
-                        <a href="index.php?action=displayOffer">
+                        <a href="index.php?action=displayOffer&offerID=<?=$offer['colocationID'] ?>">
                             <button class="btn btn-secondary">Voir en détail</button>
                         </a>
                     </div>

@@ -22,6 +22,9 @@ function createOfferJSON($offerRequest)
     $result = false;
     $offers = getOffers();
     $offerImg = $_FILES['createOfferImage'];
+    $offerImg2 = $_FILES['createOfferImage2'];
+    $offerImg3 = $_FILES['createOfferImage3'];
+
 
     $offerID = 0;
     foreach ($offers as $offer) {
@@ -30,7 +33,7 @@ function createOfferJSON($offerRequest)
 
     $offers[] = array('colocationID' => $offerID, 'userEmailAddress' => $_SESSION['userEmailAddress'], "colocationAddress" => $offerRequest['createOfferAddress'],
         "colocationTitle" => $offerRequest['createOfferTitle'], "colocationDescription" => $offerRequest['createOfferDescription'],
-        "colocationDate" => $offerRequest['createOfferDate'], "colocationImg" => $offerImg['name']);
+        "colocationDate" => $offerRequest['createOfferDate'], "colocationImg" => $offerImg['name'], "colocationImg2" => $offerImg2['name'], "colocationImg3" => $offerImg3['name']);
 
     //réécrire le fichier des offers
     updateOffers($offers);
@@ -41,11 +44,14 @@ function modifyOfferJSON($offerModifyRequest) {
     $result = false;
     $offers = getOffers();
     $offerImg = $_FILES['modifyOfferImage'];
+    $offerImg2 = $_FILES['modifyOfferImage2'];
+    $offerImg3 = $_FILES['modifyOfferImage3'];
+
     foreach ($offers as $offer) {
         if ($offer['colocationID'] == $_GET['modifyOfferID']) {
             $offerss[] = array('colocationID' => $_GET['modifyOfferID'], 'userEmailAddress' => $_SESSION['userEmailAddress'], "colocationAddress" => $offerModifyRequest['modifyOfferAddress'],
                 "colocationTitle" => $offerModifyRequest['modifyOfferTitle'], "colocationDescription" => $offerModifyRequest['modifyOfferDescription'],
-                "colocationDate" => $offerModifyRequest['modifyOfferDate'], "colocationImg" => $offerImg['name']);
+                "colocationDate" => $offerModifyRequest['modifyOfferDate'], "colocationImg" => $offerImg['name'], "colocationImg2" => $offerImg2['name'], "colocationImg3" => $offerImg3['name']);
         }
     }
     foreach ($offers as $offer => $value) {
