@@ -29,7 +29,7 @@ ob_start();
                     <label for="inputUserSubject" class="col-sm-2 col-form-label">Subject :</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" name="inputUserSubject"
-                               placeholder="Subject of the message">
+                               placeholder="Subject of the message" required>
                     </div>
                 </div>
                 <br><br><br>
