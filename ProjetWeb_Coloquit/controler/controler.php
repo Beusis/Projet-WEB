@@ -92,7 +92,7 @@ function displayOffer()
 
 function contact()
 {
-    if ($_POST['inputUserMessage']) {
+    if (!isset($_POST['inputUserSubject'])) {
         $_GET['action'] = "contact";
         require "view/contact.php";
     } else {
@@ -173,12 +173,13 @@ function deleteOffer()
 
     file_put_contents("data/offers.json", $data);
 
-    require "view/home.php";
+    home();
 }
 
-function emailSending(){
+function emailSending()
+{
 
-    require_once "PHPMailer/PHPMailerAutoload.php";
+    require_once "model/PHPMailer/PHPMailerAutoload.php";
 
     $mail = new PHPMailer();
 
@@ -186,17 +187,19 @@ function emailSending(){
     $mail->CharSet = 'UTF-8';
     $mail->Host = "mail01.swisscenter.com";
     $mail->SMTPAuth = true;
-    $mail->Username = "email";
-    $mail->Password = "password";
+    $mail->Username = "info@coloquit.mycpnv.ch";
+    $mail->Password = "C0l0qu!t";
     $mail->Port = "587";
     $mail->SMTPSecure = "tls";
 
-    $mail->From = "email";
-    $mail->FromName= "name";
-    $mail->addAddress(“to?”);
-    $mail->Subject = (“Subject”);
-    $mail->Body = “body”;
+    $mail->From = "info@coloquit.mycpnv.ch";
+    $mail->FromName = "Info coloquit";
+    $mail->addAddress($_GET['userEmailAddressOfTheOffer']);
+    $mail->Subject = $_POST['inputUserSubject'];
+    $mail->Body = "Ce mail vous est envoyé de la part de " . $_POST['inputUserEmailAddress'] . "<br>Prière de le contacter a cette addresse email et non pas en répondant a ce message<br><br>";
+    $mail->Body = $mail->Body . $_POST['inputUserMessage'];
 
     $mail->send();
 
+    home();
 }

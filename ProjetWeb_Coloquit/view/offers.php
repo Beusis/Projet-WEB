@@ -67,7 +67,7 @@ ob_start();
         endforeach;
         ?>
         <?php if (isset($_SESSION['userEmailAddress'])) : ?>
-            <a href="index.php?action=contact">
+            <a href="index.php?action=contact&userEmailAddressOfTheOffer=<?=$offer['userEmailAddress']?>">
                 <button class="btn btn-secondary">Contact the member</button>
             </a>
         <?php else: ?>

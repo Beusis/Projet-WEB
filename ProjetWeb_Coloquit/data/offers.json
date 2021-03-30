@@ -1,1 +1,13 @@
-[{"colocationID":0,"userEmailAddress":"axel.pittet@cpnv.ch","colocationAddress":"a","colocationTitle":"a","colocationDescription":"a","colocationDate":"2021-03-29","colocationImg":"muzan.jpg","colocationImg2":"","colocationImg3":""}]
+[
+    {
+        "colocationID": 1,
+        "userEmailAddress": "axel.pittet@gmail.com",
+        "colocationAddress": "a",
+        "colocationTitle": "test contact",
+        "colocationDescription": "b",
+        "colocationDate": "2021-04-08",
+        "colocationImg": "muzan.jpg",
+        "colocationImg2": "",
+        "colocationImg3": ""
+    }
+]
