@@ -176,27 +176,27 @@ function deleteOffer()
     require "view/home.php";
 }
 
-//function emailSending($infoMail){
-//
-//    require_once "PHPMailer/PHPMailerAutoload.php";
-//
-//    $mail = new PHPMailer();
-//
-//    $mail->isSMTP();
-//    $mail->CharSet = 'UTF-8';
-//    $mail->Host = "mail01.swisscenter.com";
-//    $mail->SMTPAuth = true;
-//    $mail->Username = "email";
-//    $mail->Password = "password";
-//    $mail->Port = "587";
-//    $mail->SMTPSecure = "tls";
-//
-//    $mail->From = "email";
-//    $mail->FromName= "name";
-//    $mail->addAddress(“to?”);
-//    $mail->Subject = (“Subject”);
-//    $mail->Body = “body”;
-//
-//    $mail->send();
-//
-//}
+function emailSending(){
+
+    require_once "PHPMailer/PHPMailerAutoload.php";
+
+    $mail = new PHPMailer();
+
+    $mail->isSMTP();
+    $mail->CharSet = 'UTF-8';
+    $mail->Host = "mail01.swisscenter.com";
+    $mail->SMTPAuth = true;
+    $mail->Username = "email";
+    $mail->Password = "password";
+    $mail->Port = "587";
+    $mail->SMTPSecure = "tls";
+
+    $mail->From = "email";
+    $mail->FromName= "name";
+    $mail->addAddress(“to?”);
+    $mail->Subject = (“Subject”);
+    $mail->Body = “body”;
+
+    $mail->send();
+
+}
