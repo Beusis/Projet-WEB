@@ -26,10 +26,10 @@ function createOfferJSON($offerRequest)
     $offerImg3 = $_FILES['createOfferImage3'];
 
 
-    $offerID = 0;
     foreach ($offers as $offer) {
-        $offerID += 1;
+        $offerID = $offer['colocationID'];
     }
+    $offerID += 1;
 
     $offers[] = array('colocationID' => $offerID, 'userEmailAddress' => $_SESSION['userEmailAddress'], "colocationAddress" => $offerRequest['createOfferAddress'],
         "colocationTitle" => $offerRequest['createOfferTitle'], "colocationDescription" => $offerRequest['createOfferDescription'],

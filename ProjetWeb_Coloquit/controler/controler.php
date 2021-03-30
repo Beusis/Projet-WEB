@@ -167,6 +167,13 @@ function deleteOffer()
         unset($data[$i]);
     }
 
+    $offerID = 0;
+    foreach ($data as $key) {
+        $offerID += 1;
+        $key['colocationID'] = $offerID;
+    }
+
+
     $data = array_values($data);
 
     $data = json_encode($data, JSON_PRETTY_PRINT);
