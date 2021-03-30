@@ -27,7 +27,7 @@ ob_start();
 
                     <div class="carousel-inner border-2 mt-3 offersImg">
                         <div class="carousel-item active">
-                            <img src="view/content/img/<?= $offer['colocationImg'] ?>" class="d-block w-100 h-100">
+                            <img src="view/content/img/<?= $offer['colocationImg'] ?>" class="d-block h-100 w-100">
                         </div>
                         <?php if ($offer['colocationImg2'] != "") : ?>
                             <div class="carousel-item">
@@ -40,7 +40,7 @@ ob_start();
                             </div>
                         <?php endif; ?>
                     </div>
-                    <?php if ((isset($offer['colocationImg2'])) && (isset($offer['colocationImg3']))) : ?>
+                    <?php if (($offer['colocationImg2'] != "") && ($offer['colocationImg3'] != "")) : ?>
                         <button class="carousel-control-prev btn-dark" type="button"
                                 data-bs-target="#carouselExampleIndicators"
                                 data-bs-slide="prev">

@@ -90,10 +90,14 @@ function displayOffer()
     require "view/offers.php";
 }
 
-function displayContact()
+function contact()
 {
-    $_GET['action'] = "contact";
-    require "view/contact.php";
+    if ($_POST['inputUserMessage']) {
+        $_GET['action'] = "contact";
+        require "view/contact.php";
+    } else {
+        emailSending();
+    }
 }
 
 function createOffer($offerRequest)
@@ -151,16 +155,48 @@ function deleteOffer()
 {
     $data = file_get_contents("data/offers.json");
     $data = json_decode($data, true);
+    $arr_index = array();
 
     foreach ($data as $key => $value) {
         if ($value['colocationID'] == $_GET['deleteOfferID']) {
-            unset($data[$key]);
+            $arr_index[] = $key;
         }
+    }
+
+    foreach ($arr_index as $i) {
+        unset($data[$i]);
     }
 
     $data = array_values($data);
 
     $data = json_encode($data, JSON_PRETTY_PRINT);
 
-    updateOffers($data);
+    file_put_contents("data/offers.json", $data);
+
+    require "view/home.php";
 }
+
+//function emailSending($infoMail){
+//
+//    require_once "PHPMailer/PHPMailerAutoload.php";
+//
+//    $mail = new PHPMailer();
+//
+//    $mail->isSMTP();
+//    $mail->CharSet = 'UTF-8';
+//    $mail->Host = "mail01.swisscenter.com";
+//    $mail->SMTPAuth = true;
+//    $mail->Username = "email";
+//    $mail->Password = "password";
+//    $mail->Port = "587";
+//    $mail->SMTPSecure = "tls";
+//
+//    $mail->From = "email";
+//    $mail->FromName= "name";
+//    $mail->addAddress(“to?”);
+//    $mail->Subject = (“Subject”);
+//    $mail->Body = “body”;
+//
+//    $mail->send();
+//
+//}
