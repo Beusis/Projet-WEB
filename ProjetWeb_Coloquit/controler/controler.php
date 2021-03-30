@@ -149,10 +149,18 @@ function fileUpload($formImage)
 
 function deleteOffer()
 {
-    $offers = getOffers();
-    foreach ($offers as $offer => $value) {
-        if (in_array($_GET['deleteOfferID'], $value)) {
-            unset($offers[$offer]);
+    $data = file_get_contents("data/offers.json");
+    $data = json_decode($data, true);
+
+    foreach ($data as $key => $value) {
+        if ($value['colocationID'] == $_GET['deleteOfferID']) {
+            unset($data[$key]);
         }
     }
+
+    $data = array_values($data);
+
+    $data = json_encode($data, JSON_PRETTY_PRINT);
+
+    updateOffers($data);
 }
