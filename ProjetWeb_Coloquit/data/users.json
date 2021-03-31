@@ -1,9 +1,1 @@
-[
-  {
-    "userEmailAddress": "axel.pittet@cpnv.ch",
-    "userHashPsw": "$2y$10$rn3VY9ouTUj5HzNCJEVEyekIixZzytFeIoMd9IGyDU1PkjaJtKc9K",
-    "userFirstName": "Axel",
-    "userLastName": "Pittet",
-    "userPhoneNumber": "079 797 79 79"
-  }
-]
+[{"userEmailAddress":"user.un@cpnv.ch","userHashPsw":"$2y$10$nM3.08pzlJwzVlD0LxTEi.WqK\/Gsm1eQJ1vZBLkPKyuXpb8dgIBcy","userFirstName":"User","userLastName":"Un","userPhoneNumber":"012 345 67 89"},{"userEmailAddress":"user.deux@cpnv.ch","userHashPsw":"$2y$10$h9tS9yE7JBiDbW2oCAtBqOch3j3mSeKexrafOVWnO4JhpT6OwFMxu","userFirstName":"User","userLastName":"Deux","userPhoneNumber":"123 456 78 90"},{"userEmailAddress":"user.trois@cpnv.ch","userHashPsw":"$2y$10$ad1s\/djhWmTzBjJWa9zD2e5FRyIPgah8z.UosYxwGh.\/5IAK1KeMO","userFirstName":"User","userLastName":"Trois","userPhoneNumber":"012 345 67 89"},{"userEmailAddress":"user.cinq@cpnv.ch","userHashPsw":"$2y$10$kKP6QxyO90yuHSvckKBMLeu\/V9d9aqPeJvvf6Dje075R6W2d11c0K","userFirstName":"user","userLastName":"cinq","userPhoneNumber":"012 345 67 89"},{"userEmailAddress":"user.quatre@cpnv.ch","userHashPsw":"$2y$10$3LASCPmNrYAGFf092.upquLPrRN0N7sYD1YG3i\/PKxjvuKUd\/NYcu","userFirstName":"User","userLastName":"Quatre","userPhoneNumber":"234 567 89 10"}]
