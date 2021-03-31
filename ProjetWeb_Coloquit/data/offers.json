@@ -1,13 +1,1 @@
-[
-  {
-    "colocationID": 1,
-    "userEmailAddress": "axel.pittet@cpnv.ch",
-    "colocationAddress": "a",
-    "colocationTitle": "a",
-    "colocationDescription": "a",
-    "colocationDate": "2021-04-01",
-    "colocationImg": "Netflix.jpg",
-    "colocationImg2": "",
-    "colocationImg3": ""
-  }
-]
+[{"colocationID":1,"userEmailAddress":"user.deux@cpnv.ch","colocationAddress":"1014 Lausanne","colocationTitle":"Colocation sur lausanne","colocationDescription":"Je cherche un colocataire dans mon appartement de 20m2","colocationDate":"2021-04-02","colocationImg":"user_deux_Image1.jpeg","colocationImg2":"user_deux_Image2.jpg","colocationImg3":""},{"colocationID":2,"userEmailAddress":"user.trois@cpnv.ch","colocationAddress":"75000 Paris","colocationTitle":"Colocation sur Paris","colocationDescription":"Je recherche 2 colocataires de 20 ans ou plus pour une colocation sur paris dans le 15eme arrondissement","colocationDate":"2021-04-11","colocationImg":"user_trois_Image1.jpg","colocationImg2":"user_trois_Image2.jpg","colocationImg3":"user_trois_Image3.jpg"},{"colocationID":3,"userEmailAddress":"user.cinq@cpnv.ch","colocationAddress":"8000 Zurich","colocationTitle":"Coloc sur Zurich","colocationDescription":"Petit appartement \u00e0 Zurich pour \u00e9tudiant","colocationDate":"2021-04-04","colocationImg":"thumb_755_2000_0_0_0_auto.jpg","colocationImg2":"","colocationImg3":""},{"colocationID":4,"userEmailAddress":"user.un@cpnv.ch","colocationAddress":"3000 Berne","colocationTitle":"Colocation \u00e0 Berne","colocationDescription":"Petite chambre \u00e9tudiant \u00e0 Berne","colocationDate":"2021-05-09","colocationImg":"b20-schlafen-und-wohnen-2faa4061.jpg","colocationImg2":"","colocationImg3":""},{"colocationID":5,"userEmailAddress":"user.quatre@cpnv.ch","colocationAddress":"1450 Ste-Croix","colocationTitle":"Colocation \u00e0 Ste-croix","colocationDescription":"Je poss\u00e8de un appartement avec vue sur la plaine et cherche \u00e0 le partager avec quelqu'un !","colocationDate":"2021-03-31","colocationImg":"user_quatre_Image_1.jpg","colocationImg2":"user_quatre_Image2.jpg","colocationImg3":""}]
