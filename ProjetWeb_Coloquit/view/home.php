@@ -5,20 +5,22 @@ ob_start();
     <div id="offresMenu">
         <div class="row row-cols-1 row-cols-md-3 g-4 m-5">
 
-            <?php foreach ($offers as $offer) :?>
+            <?php foreach ($offers as $offer) :
+                $offer['colocationTitle'] = htmlentities($offer['colocationTitle']);
+                $offer['colocationDescription'] = htmlentities($offer['colocationDescription']); ?>
                 <div class="col">
-                <div class="card h-100">
-                    <img src="view/content/img/<?=$offer['colocationImg']?>" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title"><?=$offer['colocationTitle'] ?></h5>
-                        <p class="card-text"><?=$offer['colocationDescription'] ?></p>
-                        <a href="index.php?action=displayOffer&offerID=<?=$offer['colocationID'] ?>">
-                            <button class="btn btn-secondary">Voir en détail</button>
-                        </a>
+                    <div class="card h-100">
+                        <img src="view/content/img/<?= $offer['colocationImg'] ?>" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title"><?= $offer['colocationTitle'] ?></h5>
+                            <p class="card-text"><?= $offer['colocationDescription'] ?></p>
+                            <a href="index.php?action=displayOffer&offerID=<?= $offer['colocationID'] ?>">
+                                <button class="btn btn-secondary">Voir en détail</button>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <?php endforeach;?>
+            <?php endforeach; ?>
         </div>
     </div>
 

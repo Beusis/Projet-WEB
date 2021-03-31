@@ -90,8 +90,9 @@ function displayOffer()
     require "view/offers.php";
 }
 
-function contact()
+function contact($userEmailAddressOfTheOffer)
 {
+    $destinationEmail = $userEmailAddressOfTheOffer;
     if (!isset($_POST['inputUserSubject'])) {
         $_GET['action'] = "contact";
         require "view/contact.php";
@@ -153,6 +154,8 @@ function fileUpload($formImage)
 
 function deleteOffer()
 {
+
+
     $data = file_get_contents("data/offers.json");
     $data = json_decode($data, true);
     $arr_index = array();

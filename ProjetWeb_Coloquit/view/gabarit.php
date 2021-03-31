@@ -17,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="view/content/css/bootstrap.min.css">
     <link rel="stylesheet" href="view/content/css/stylesheet.css">
     <script src="view/content/js/bootstrap.bundle.min.js"></script>
+    <script src="view/content/js/script.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>

@@ -25,7 +25,7 @@ if (isset($_GET['action'])) {
             displayOffer();
             break;
         case 'contact' :
-            contact();
+            contact($_GET['userEmailAddressOfTheOffer']);
             break;
         case 'createOffer' :
             createOffer($_POST);

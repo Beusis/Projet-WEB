@@ -68,7 +68,7 @@ ob_start();
                         <br><br><br><br>
                         <div class="mb-3 row col-sm-10 text-align-right">
                             <input type="submit" value="Modify the offer">
-                            <a href="index.php?action=deleteOffer&deleteOfferID=<?=$offer['colocationID']?>"><input type="button" value="Delete the offer"></a>
+                            <a href="index.php?action=deleteOffer&deleteOfferID=<?=$offer['colocationID']?>"><input type="button" value="Delete the offer" onclick="confirmDelete()"></a>
                         </div>
                     </form>
                 <?php endif;

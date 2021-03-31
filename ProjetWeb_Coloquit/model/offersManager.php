@@ -25,7 +25,7 @@ function createOfferJSON($offerRequest)
     $offerImg2 = $_FILES['createOfferImage2'];
     $offerImg3 = $_FILES['createOfferImage3'];
 
-
+    $offerID = 0;
     foreach ($offers as $offer) {
         $offerID = $offer['colocationID'];
     }
