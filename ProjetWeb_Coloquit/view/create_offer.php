@@ -14,7 +14,7 @@ ob_start();
                     <label for="createOfferTitle" class="col-sm-2 col-form-label">Title :</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" name="createOfferTitle"
-                               placeholder="Title of the colocation offer" required>
+                               placeholder="Title of the colocation offer" maxlength="50" required>
                     </div>
                 </div>
                 <br><br><br>
@@ -22,7 +22,7 @@ ob_start();
                     <label for="createOfferAddress" class="col-sm-2 col-form-label">Address :</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" name="createOfferAddress"
-                               placeholder="Address of the colocation offer" required>
+                               placeholder="Address of the colocation offer" maxlength="100" required>
                     </div>
                 </div>
                 <br><br><br>
@@ -30,7 +30,7 @@ ob_start();
                     <label for="createOfferDescription" class="col-sm-2 col-form-label">Description :</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" name="createOfferDescription"
-                               placeholder="Description of the colocation offer" required>
+                               placeholder="Description of the colocation offer" maxlength="300" required>
                     </div>
                 </div>
                 <br><br><br>
