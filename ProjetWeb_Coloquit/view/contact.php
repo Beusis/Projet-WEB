@@ -9,7 +9,7 @@ ob_start();
     <div class="text-align-center">
         <?php
         require_once "model/usersManager.php";
-        $users = getUsers(); 
+        $users = getUsers();
         foreach ($users
 
                  as $user) :
