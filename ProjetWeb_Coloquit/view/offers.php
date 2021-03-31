@@ -10,13 +10,15 @@ foreach ($offers as $offer) :
         $offer['colocationTitle'] = htmlentities($offer['colocationTitle']);
         $offer['colocationDescription'] = htmlentities($offer['colocationDescription']);
         $offer['colocationAddress'] = htmlentities($offer['colocationAddress']);
+        $offer['colocationDate'] = htmlentities($offer['colocationDate']);
+        $offer['colocationImg'] = htmlentities($offer['colocationImg']);
         ?>
         <br>
         <h4><?= $offer['colocationTitle'] ?></h4>
 
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
 
-            <?php if ((isset($offer['colocationImg2'])) && (isset($offer['colocationImg3']))) : ?>
+            <?php if (($offer['colocationImg2'] != "") && ($offer['colocationImg3'] != "")) : ?>
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
                             class="active"
@@ -62,12 +64,28 @@ foreach ($offers as $offer) :
 
 
         <div class="mt-5">
-            <p id="offerText"><?= $offer['colocationDescription'] ?></p>
+            <p class="offerText"><?= $offer['colocationDescription'] ?></p>
         </div>
-        <div class="mt-5">
-            <p id="offerText"><?= $offer['colocationAddress'] ?></p>
+        <div>
+            <p class="offerText"><?= $offer['colocationAddress'] ?></p>
         </div>
-
+        <div>
+            <p class="offerText">Available from <?= $offer['colocationDate'] ?></p>
+        </div>
+        <div>
+            <p class="offerText">Published by
+                <?php
+                require_once "model/usersManager.php";
+                $users = getUsers();
+                foreach ($users as $user) {
+                    if ($user['userEmailAddress'] == $offer['userEmailAddress']) {
+                        $user['userFirstName'] = htmlentities($user['userFirstName']);
+                        $user['userLastName'] = htmlentities($user['userLastName']);
+                        echo $user['userFirstName'] . " " . $user['userLastName'];
+                    }
+                } ?>
+            </p>
+        </div>
 
         <?php if (isset($_SESSION['userEmailAddress'])) : ?>
         <a href="index.php?action=contact&userEmailAddressOfTheOffer=<?= $offer['userEmailAddress'] ?>">
@@ -75,7 +93,7 @@ foreach ($offers as $offer) :
         </a>
     <?php else: ?>
         <div class="alert alert-primary mt-5" role="alert">
-            Connectez-vous afin de pouvoir prendre contact avec ce membre
+            Login to be able to contact this member
         </div>
     <?php endif; ?>
         </div>

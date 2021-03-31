@@ -16,10 +16,13 @@ function register($registerRequest)
         $userEmailAddress = $registerRequest['inputUserEmailAddress'];
         $userPsw = $registerRequest['inputUserPsw'];
         $userPswConfirm = $registerRequest['inputUserPswConfirm'];
+        $userFirstName = $registerRequest['inputUserFirstname'];
+        $userLastName = $registerRequest['inputUserLastname'];
+        $userPhoneNumber = $registerRequest['inputUserPhoneNumber'];
 
         if ($userPsw == $userPswConfirm) {
             require_once "model/usersManager.php";
-            if (registerNewAccount($userEmailAddress, $userPsw) == true) {
+            if (registerNewAccount($userEmailAddress, $userPsw, $userFirstName, $userLastName, $userPhoneNumber) == true) {
                 createSession($userEmailAddress);
                 $registerErrorMessage = null;
                 home();
@@ -90,15 +93,11 @@ function displayOffer()
     require "view/offers.php";
 }
 
-function contact($userEmailAddressOfTheOffer)
+function contact()
 {
-    $destinationEmail = $userEmailAddressOfTheOffer;
-    if (!isset($_POST['inputUserSubject'])) {
-        $_GET['action'] = "contact";
-        require "view/contact.php";
-    } else {
-        emailSending();
-    }
+    $_GET['action'] = "contact";
+    require "view/contact.php";
+
 }
 
 function createOffer($offerRequest)
@@ -182,34 +181,6 @@ function deleteOffer()
     $data = json_encode($data, JSON_PRETTY_PRINT);
 
     file_put_contents("data/offers.json", $data);
-
-    home();
-}
-
-function emailSending()
-{
-
-    require_once "model/PHPMailer/PHPMailerAutoload.php";
-
-    $mail = new PHPMailer();
-
-    $mail->isSMTP();
-    $mail->CharSet = 'UTF-8';
-    $mail->Host = "mail01.swisscenter.com";
-    $mail->SMTPAuth = true;
-    $mail->Username = "info@coloquit.mycpnv.ch";
-    $mail->Password = "C0l0qu!t";
-    $mail->Port = "587";
-    $mail->SMTPSecure = "tls";
-
-    $mail->From = "info@coloquit.mycpnv.ch";
-    $mail->FromName = "Info coloquit";
-    $mail->addAddress($_GET['userEmailAddressOfTheOffer']);
-    $mail->Subject = $_POST['inputUserSubject'];
-    $mail->Body = "Ce mail vous est envoyé de la part de " . $_POST['inputUserEmailAddress'] . "<br>Prière de le contacter a cette addresse email et non pas en répondant a ce message<br><br>";
-    $mail->Body = $mail->Body . $_POST['inputUserMessage'];
-
-    $mail->send();
 
     home();
 }

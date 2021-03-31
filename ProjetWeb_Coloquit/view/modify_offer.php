@@ -17,7 +17,7 @@ ob_start();
                             <label for="modifyOfferTitle" class="col-sm-2 col-form-label">Title :</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" name="modifyOfferTitle"
-                                       placeholder="Title of the colocation offer" value="<?=$offer['colocationTitle']?>" required>
+                                       placeholder="Title of the colocation offer" value="<?=$offer['colocationTitle']?> " maxlength="50" required>
                             </div>
                         </div>
                         <br><br><br>
@@ -26,7 +26,7 @@ ob_start();
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" name="modifyOfferAddress"
                                        placeholder="Address of the colocation offer"
-                                       value="<?=$offer['colocationAddress']?>"
+                                       value="<?=$offer['colocationAddress']?>" maxlength="100"
                                        required>
                             </div>
                         </div>
@@ -36,7 +36,7 @@ ob_start();
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" name="modifyOfferDescription"
                                        placeholder="Description of the colocation offer"
-                                       value="<?=$offer['colocationDescription']?>" required>
+                                       value="<?=$offer['colocationDescription']?>" maxlength="200" required>
                             </div>
                         </div>
                         <br><br><br>
@@ -64,6 +64,7 @@ ob_start();
                             <div class="col-sm-10">
                                 <input type="file" class="form-control" name="modifyOfferImage3" accept="image/*">
                             </div>
+                            <span>Please re-insert your images</span>
                         </div>
                         <br><br><br><br>
                         <div class="mb-3 row col-sm-10 text-align-right">
